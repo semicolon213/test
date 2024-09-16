@@ -150,8 +150,13 @@ LRESULT Window::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         b_hWnd = pBW->GetHWND();
 
+        SetTimer(hWnd, 1, 50, NULL);
+
         break;
 
+    case WM_TIMER:
+        excel->textMove(hWnd);
+        break;
     case WM_COMMAND:
     {
 
@@ -365,4 +370,11 @@ Window* Window::GetInstance()
             sinTonIns.reset(new Window);
         });
     return sinTonIns.get();
+}
+
+int Window::getClientWidth() 
+{
+    GetClientRect(hWnd, &clientWidth);
+
+    return clientWidth.right - clientWidth.left;
 }

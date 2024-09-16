@@ -14,6 +14,9 @@
 #include <fstream>
 
 #include <comdef.h>
+#include <tchar.h>
+
+#include "Resource.h"
 
 
 using namespace std;
@@ -22,7 +25,9 @@ class ConnExcel
 {
 public:
 
-	void insertExcel(const string, const wstring);
+	void insertExcel(const wstring);
+	wstring getVisitList();
+	void textMove(HWND, int);
 
 private:
 
@@ -30,6 +35,13 @@ private:
 	string multiVisit;
 
 	string wcharToChar(const wstring);
-	
-};
+	wstring charToWchar(const string);
 
+	void onTimer(HWND, int);
+	int getTextSize(HWND);
+
+	int textPosX;
+	int textWidth = 0;
+	RECT clientWidth;
+	RECT textSize;
+};

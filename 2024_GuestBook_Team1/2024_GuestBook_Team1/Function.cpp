@@ -44,6 +44,11 @@ void Function::draw(HWND hWnd, PINFO dInfo, bool isRecord)// 뒤에 브러쉬 추가
 
 }
 
+void Function::paint(HWND hWnd)
+{
+
+}
+
 void Function::mouseUD(PINFO dInfo, bool isRecord)
 {
 	if (dInfo.state == WM_LBUTTONDOWN)

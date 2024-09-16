@@ -37,6 +37,7 @@ private:
 
 	void replay(HWND);
 	void record(PINFO);
+	void paint(HWND);
 
 public:
 

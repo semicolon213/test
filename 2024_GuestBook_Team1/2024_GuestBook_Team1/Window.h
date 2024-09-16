@@ -34,6 +34,9 @@ private :
 	LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 	static INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
 
+	int getClientWidth();
+
+	RECT clientWidth;
 
 	static unique_ptr<Window> sinTonIns;
 	static once_flag flag;
